@@ -1,28 +1,17 @@
-#**Traffic Sign Recognition** 
-
-##Writeup Template
-
-###You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
-
----
-
-**Build a Traffic Sign Recognition Project**
-
-The goals / steps of this project are the following:
-* Load the data set (see below for links to the project data set)
-* Explore, summarize and visualize the data set
-* Design, train and test a model architecture
-* Use the model to make predictions on new images
-* Analyze the softmax probabilities of the new images
-* Summarize the results with a written report
-
+**Traffic Sign Recognition** 
 
 [//]: # (Image References)
 
 [visualization]: ./visualization.png "Visualization"
+[preprocessing]: ./preprocessed_image.png "Preprocessing"
+[internet-0]: ./internet-examples/0.png "Example 0"
+[internet-1]: ./internet-examples/1.png "Example 1"
+[internet-2]: ./internet-examples/2.png "Example 2"
+[internet-3]: ./internet-examples/3.png "Example 3"
+[internet-4]: ./internet-examples/4.png "Example 4"
 
 ## Rubric Points
-###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
+### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
 ---
 ### Writeup / README
@@ -58,7 +47,7 @@ As a first step, I decided to convert the images to grayscale because traffic si
 
 Here is an example of a traffic sign image before and after preprocessing.
 
-![alt text][preprocessed_image.png]
+![alt text][preprocessing]
 
 
 #### 2. Training, validation and testing
@@ -136,7 +125,7 @@ Choose five German traffic signs found on the web and provide them in the report
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][internet-examples/0.png] ![alt text][internet-examples/1.png] ![alt text][internet-examples/2.png] ![alt text][internet-examples/3.png] ![alt text][internet-examples/4.png]
+![alt text][internet-0] ![alt text][internet-1] ![alt text][internet-2] ![alt text][internet-3] ![alt text][internet-4]
 
 The first two images should be rather easy to classify. The third image is a graphical depiction of a sign and does differ in proportions from a real sign. The last two images are distorted and distorted and rotated respectively. 
 
