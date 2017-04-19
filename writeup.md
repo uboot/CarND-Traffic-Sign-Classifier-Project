@@ -18,9 +18,9 @@ Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/4
 
 You're reading it! and here is a link to my [project code](https://github.com/uboot/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
 
-### Data Set Summary & Exploration
+### Dataset Exploration
 
-#### 1. Summary statistics
+#### 1. Dataset Summary
 
 The code for this step is contained in the second code cell of the IPython notebook.  
 
@@ -31,7 +31,7 @@ I calculated summary statistics of the traffic signs data set:
 * The shape of a traffic sign image is ?
 * The number of unique classes/labels in the data set is ?
 
-#### 2. Exploratory visualization
+#### 2. Exploratory Visualization
 
 The code for this step is contained in the third code cell of the IPython notebook. It contains a visualization of 36 randomly selected images of the data set. Each time the code in this cell is re-run different images are output. Note the rather large differences in image brightness of the data.
 
@@ -49,16 +49,7 @@ Here is an example of a traffic sign image before and after preprocessing.
 
 ![alt text][preprocessing]
 
-
-#### 2. Training, validation and testing
-
-Describe how, and identify where in your code, you set up training, validation and testing data. How much data was in each set? Explain what techniques were used to split the data into these sets. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, identify where in your code, and provide example images of the additional data)
-
-I used the provided data for training (train.p) and validation (validation.p).
-The code for splitting the data into training and validation sets is contained in the fifth code cell of the IPython notebook. With this data I developed and optimized the model and the training the parameter such that the accuracy of the model for the validation was above 93%. After computation of the final model (lenet) I evaluated it using the provided training data (test.p).
-
-
-#### 3. Model architecture
+#### 2. Model Architecture
 
 The code for my final model is located in the seventh cell of the ipython notebook. It is basically LeNet with additional dropout layers after the fully connected layers: 
 
@@ -79,14 +70,16 @@ The code for my final model is located in the seventh cell of the ipython notebo
 | Dropout		|						|
 | Fully connected	| outputs 84x43    				|
 
+#### 3. Model Training
 
-#### 4. Training
+The code for training the model is located in the eigth and ninth cell of the ipython notebook.
 
-The code for training the model is located in the eigth and ninth cell of the ipython notebook. 
+I used the provided data for training (train.p) and validation (validation.p).
+The code for splitting the data into training and validation sets is contained in the fifth code cell of the IPython notebook. With this data I developed and optimized the model and the training the parameter such that the accuracy of the model for the validation was above 93%. After computation of the final model (lenet) I evaluated it using the provided training data (test.p).
 
 To train the model, I used an Adam gradient descent optimizer with a learning rate of 0.0005. For a given epoch I shuffled the training data and divided it into batches of size 128. Each batch was used to run step of the gradient descent optimizer. This process was run over 100 epochs. The dropout rate during the training process was set to 0.6 for both dropout layers.
 
-#### 5. Finding the solution
+#### 4. Solution Approach
 
 Because traffic signs after the preprocessing have a certain similarity to graphical data (such as the handwritten digits) I started from the LeNet architecture. Originally I chose a training rate 0.001 and 10 epochs. From there I first increased the number of epochs and observed a stagnating validation accuracy after some epochs. Next, I iteratively decreased the training rate. At some point during this process I added the dropout layers after the fully connected layers to reduce overfitting. This lead to a satisfying validation accuracy. I tried to move the dropout layers to the convolutional layers of the LeNet architecture but the results were better with the orignal approach.
 
@@ -97,22 +90,9 @@ My final model results were:
 * validation set accuracy of 96.1% 
 * test set accuracy of 93.4%
 
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to over fitting or under fitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
-
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- 
-
 ### Test a Model on New Images
 
-#### 1. Traffic signs from the internet
+#### 1. Acquiring New Images
 
 Here are five German traffic signs that I found on the web:
 
@@ -120,7 +100,7 @@ Here are five German traffic signs that I found on the web:
 
 The first two images should be rather easy to classify. The third image is a graphical depiction of a sign and does differ in proportions from a real sign. The last two images are distorted and distorted and rotated respectively. 
 
-#### 2. Performance
+#### 2. Performance on New Images
 
 Here are the results of the prediction:
 
@@ -135,7 +115,7 @@ Here are the results of the prediction:
 
 The model managed to classify all but the last of the images. The performance could have been improved by training the mode with augmented (i.e. rotated) image data.
 
-#### 3. Softmax probabilities
+#### 3. Model Certainty - Softmax Probabilities
 
 Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
