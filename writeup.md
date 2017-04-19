@@ -1,4 +1,4 @@
-**Traffic Sign Recognition** 
+## Traffic Sign Recognition 
 
 [//]: # (Image References)
 
@@ -10,7 +10,7 @@
 [internet-3]: ./internet-examples/3.png "Example 3"
 [internet-4]: ./internet-examples/4.png "Example 4"
 
-Here is a link to my [project code](https://github.com/uboot/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb).
+Here is a link to my [project code](https://github.com/uboot/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb). Below I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
 ### Dataset Exploration
 
