@@ -11,7 +11,7 @@
 [internet-4]: ./internet-examples/4.png "Example 4"
 
 ## Rubric Points
-### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
+Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
 ---
 ### Writeup / README
@@ -60,8 +60,6 @@ The code for splitting the data into training and validation sets is contained i
 
 #### 3. Model architecture
 
-Describe, and identify where in your code, what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
-
 The code for my final model is located in the seventh cell of the ipython notebook. It is basically LeNet with additional dropout layers after the fully connected layers: 
 
 | Layer         	|     Description	        		| 
@@ -84,9 +82,6 @@ The code for my final model is located in the seventh cell of the ipython notebo
 
 #### 4. Training
 
-
-Describe how, and identify where in your code, you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
-
 The code for training the model is located in the eigth and ninth cell of the ipython notebook. 
 
 To train the model, I used an Adam gradient descent optimizer with a learning rate of 0.0005. For a given epoch I shuffled the training data and divided it into batches of size 128. Each batch was used to run step of the gradient descent optimizer. This process was run over 100 epochs. The dropout rate during the training process was set to 0.6 for both dropout layers.
@@ -94,8 +89,6 @@ To train the model, I used an Adam gradient descent optimizer with a learning ra
 #### 5. Finding the solution
 
 Because traffic signs after the preprocessing have a certain similarity to graphical data (such as the handwritten digits) I started from the LeNet architecture. Originally I chose a training rate 0.001 and 10 epochs. From there I first increased the number of epochs and observed a stagnating validation accuracy after some epochs. Next, I iteratively decreased the training rate. At some point during this process I added the dropout layers after the fully connected layers to reduce overfitting. This lead to a satisfying validation accuracy. I tried to move the dropout layers to the convolutional layers of the LeNet architecture but the results were better with the orignal approach.
-
-Describe the approach taken for finding a solution. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 The code for calculating the test accuracy of the model is located in the tenth cell of the Ipython notebook.
 
@@ -120,8 +113,6 @@ If a well known architecture was chosen:
 ### Test a Model on New Images
 
 #### 1. Traffic signs from the internet
-
-Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
 Here are five German traffic signs that I found on the web:
 
